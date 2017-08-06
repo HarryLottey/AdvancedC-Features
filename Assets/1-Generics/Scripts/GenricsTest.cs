@@ -9,6 +9,7 @@ namespace Generics
     {
         public float spawnRadius = 50f;
         public GameObject prefab;
+        public GameObject prefab2;
         public int spawnAmount = 20;
         public CustomList<GameObject> gameObjects = new CustomList<GameObject>();
 
@@ -17,10 +18,20 @@ namespace Generics
         {
 
             gameObjects.Add(prefab);
-            gameObjects.Contains(prefab);
+            if (gameObjects.Contains(prefab)) 
+            {
+                print("this item is in the list :)))))");
+            }
+            
             gameObjects.Clear();
 
-            for (int i = 0; i < spawnAmount; i++)
+            if (gameObjects.Contains(prefab2))
+            {
+                print("this is a different item in the list now");
+            }
+
+            /* 
+               for (int i = 0; i < spawnAmount; i++)
             {
                 GameObject clone = Instantiate(prefab);
                 Vector3 randomPos = transform.position + Random.insideUnitSphere * spawnRadius;
@@ -28,8 +39,7 @@ namespace Generics
                 gameObjects[0] = new GameObject();
 
             }
-            
-            
+             */
 
         }
 

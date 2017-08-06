@@ -55,12 +55,19 @@ namespace Generics
         {
             // if the variable referenced matches an item in the list, return true.
 
+            if (list == null)
+                return false;
+
             for (int i = 0; i < list.Length; i++)
             {
-                // check if item is inside the list here.
+                if (list.GetValue(i).Equals(item))
+                {
+                    return true;
+                }
+               
+                
             }
-            
-            
+
             return false;
         }
     }
