@@ -9,14 +9,18 @@ namespace Delegates
     {
 
         public Transform target;
+        public Transform spawnLocation;
         public GameObject orcPrefab, trollPrefab;
         public int minAmount = 1, maxAmount = 20;
         public float spawnRate = 1f;
         
 
+
         delegate void SpawnFunc(int amount);
         private List<SpawnFunc> enemies = new List<SpawnFunc>();
 
+        
+        
         
         void Awake()
         {
@@ -26,16 +30,16 @@ namespace Delegates
 
         private void Start()
         {
+            
             StartCoroutine(Spawn());
+            
         }
 
         void SpawnOrc(int amount)
         {
-
-
             for (int i = 0; i < amount; i++)
             {
-                Instantiate(orcPrefab, target);
+                Instantiate(orcPrefab, spawnLocation); // Temp spawn location, make random
             }
             
         }
@@ -44,7 +48,7 @@ namespace Delegates
         {
             for (int i = 0; i < amount; i++)
             {
-                Instantiate(trollPrefab, target);
+                Instantiate(trollPrefab, spawnLocation);
             }
            
         }
