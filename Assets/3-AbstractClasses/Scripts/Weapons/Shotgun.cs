@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
+
 
 // Preprocessor Directives
 #if UNITY_EDITOR
@@ -15,6 +15,7 @@ namespace AbstractClasses
     {
         public float shootAngle = 45f;
         public float shootRadius = 5f;
+        public int shells = 10;
 
         private Vector2 leftDir, rightDir;
 
@@ -30,20 +31,36 @@ namespace AbstractClasses
 
         public override void Fire()
         {
-            
+
 
             // Loop through and spawn bullets
-                // Fire each bullet in the range and direction of player
+            for (int i = 0; i < shells; i++)
+            {
+                // Spawn a new bullet called 'b'
+                Bullet b = SpawnBullet(transform.position, transform.rotation);
+                // Calculate random angle using shoot angle
+
+                float randomAngle = Random.Range(-shootAngle, +shootAngle);
+                // GetDir using the randomAngle
+                Vector3 direction = GetDir(randomAngle);
+                // Set 'b's aliveDistance to shootRadius
+                b.lifetime = shootRadius;
+                // Call b.Fire() and pass direction
+                b.Fire(direction);
+            }
+                
                 
         }
 
-        // Use this for initialization
+        
+
+        
         void Start()
         {
 
         }
 
-        // Update is called once per frame
+       
         void Update()
         {
 

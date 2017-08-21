@@ -10,8 +10,7 @@ namespace AbstractClasses
         public float acceleration = 50f;
         public float hyperSpeed = 100f;
         [Range(0, 1)]
-        [Tooltip("Deceleration as a percentage of the current velocity")]
-        public float deceleration = 0.1f;
+        
         public float rotationSpeed = 20f;
 
         private Rigidbody2D rigid;
@@ -24,7 +23,7 @@ namespace AbstractClasses
         void Update()
         {
             Accelerate();
-            Decelerate();
+           
             Rotate();
         }
 
@@ -49,10 +48,7 @@ namespace AbstractClasses
 
         }
 
-        void Decelerate()
-        {
-            rigid.velocity += -rigid.velocity * deceleration;
-        }
+       
 
         void Rotate()
         {
