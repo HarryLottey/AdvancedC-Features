@@ -75,6 +75,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\!Globlals\Scripts\CameraOrbitWithZoom.cs" />
     <Compile Include="Assets\!Globlals\Scripts\RotateToVelocity2D.cs" />
     <Compile Include="Assets\1-Generics\Scripts\CustomList.cs" />
     <Compile Include="Assets\1-Generics\Scripts\GenricsTest.cs" />
@@ -87,12 +88,20 @@
     <Compile Include="Assets\2-Delegates\Scripts\Helpers\CameraFollow.cs" />
     <Compile Include="Assets\2-Delegates\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\3-AbstractClasses\Scripts\Bullets\Bullet.cs" />
+    <Compile Include="Assets\3-AbstractClasses\Scripts\Bullets\HomingBullet.cs" />
+    <Compile Include="Assets\3-AbstractClasses\Scripts\Bullets\Plasma.cs" />
+    <Compile Include="Assets\3-AbstractClasses\Scripts\Bullets\SineBullet.cs" />
     <Compile Include="Assets\3-AbstractClasses\Scripts\Movement.cs" />
     <Compile Include="Assets\3-AbstractClasses\Scripts\Shooting.cs" />
     <Compile Include="Assets\3-AbstractClasses\Scripts\Weapons\HeatSeekingRocket.cs" />
     <Compile Include="Assets\3-AbstractClasses\Scripts\Weapons\PulseCannon.cs" />
     <Compile Include="Assets\3-AbstractClasses\Scripts\Weapons\Shotgun.cs" />
+    <Compile Include="Assets\3-AbstractClasses\Scripts\Weapons\WaveRay.cs" />
     <Compile Include="Assets\3-AbstractClasses\Scripts\Weapons\Weapon.cs" />
+    <Compile Include="Assets\4-Recursion\Scripts\RecursiveSpawner.cs" />
+    <Compile Include="Assets\~Minesweeper3D\Scripts\Block.cs" />
+    <Compile Include="Assets\~Minesweeper3D\Scripts\Grid.cs" />
+    <Compile Include="Assets\~Minesweeper3D\minesweeperExamplehomework.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
