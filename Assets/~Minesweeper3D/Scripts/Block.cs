@@ -79,7 +79,7 @@ namespace Minesweeper3D
         // Update is called once per frame
         void Update()
         {
-
+            
         }
     }
 }

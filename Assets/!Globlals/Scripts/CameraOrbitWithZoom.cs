@@ -35,7 +35,7 @@ public class CameraOrbitWithZoom : MonoBehaviour
     void LateUpdate()
     {
         // IF right mouse button is pressed
-        if (Input.GetMouseButtonDown(1) == true)
+        if (Input.GetMouseButton(1))
         {
             // Hide the cursor
             HideCursor(true);
@@ -47,10 +47,9 @@ public class CameraOrbitWithZoom : MonoBehaviour
         {
             // Unhide cursor
             HideCursor(false);
-            // Movement()
-            Movement();
         }
 
+        Movement();
 
     }
 

@@ -99,7 +99,8 @@ namespace Minesweeper3D
         public void FFuncover(int x, int y, int z, bool[,,] visited)
         {
             // Coordinates in Range?
-            if (x >= 0 && y >= 0 && z >= 0 && x < width && y < height && z < depth)
+            if (x >= 0 && y >= 0 && z >= 0 && 
+                x < width && y < height && z < depth)
             {
                 // Visited already?
                 if (visited[x, y, z])
@@ -164,6 +165,29 @@ namespace Minesweeper3D
             }
         }
 
+
+        public void SelectBlock(Block selectedBlock)
+        {
+            // Reveal the selected block
+            int adjacentMines = GetAdjacentMineCountAt(selectedBlock);
+            selectedBlock.Reveal(adjacentMines);
+            // IF the selectedblock is a mine
+            if (selectedBlock.isMine == true)
+            {
+                // Uncover all other mines
+                UncoverMines();
+            }
+            // ELSE IF there are no adjacent mines
+            else if (adjacentMines == 0)
+            {
+                // Preform Flood Fill algorithm to reveal all empty blocks
+                FFuncover(selectedBlock.x,selectedBlock.y,selectedBlock.z, new bool[width, height, depth]); 
+            }
+
+                
+
+        }
+
         // Use this for initialization
         void Start()
         {
@@ -173,7 +197,20 @@ namespace Minesweeper3D
         // Update is called once per frame
         void Update()
         {
-
+            // IF left mouse button is up
+            if (Input.GetMouseButtonDown(0))
+            {
+                // IF raycast out from camera hits something
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit = new RaycastHit();
+                if(Physics.Raycast(ray, out hit, 1000))
+                {
+                    // Get hit objects block component
+                    Block hitBlock = hit.transform.GetComponent<Block>();
+                    // CALL SelectBlock() and pass in the hit block
+                    SelectBlock(hitBlock);
+                }
+            }
         }
     }
 }

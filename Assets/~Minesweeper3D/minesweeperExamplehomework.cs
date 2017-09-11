@@ -17,6 +17,7 @@ public class minesweeperExamplehomework : MonoBehaviour
     void Update()
     {
         BlockDelete();
+
     }
 
     void BlockDelete()
