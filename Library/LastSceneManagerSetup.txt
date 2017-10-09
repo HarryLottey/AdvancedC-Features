@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/~Minesweeper3D/Minesweeper3D.unity
+- path: Assets/5-Networking/Offline.unity
   isLoaded: 1
   isActive: 1

@@ -99,6 +99,9 @@
     <Compile Include="Assets\3-AbstractClasses\Scripts\Weapons\WaveRay.cs" />
     <Compile Include="Assets\3-AbstractClasses\Scripts\Weapons\Weapon.cs" />
     <Compile Include="Assets\4-Recursion\Scripts\RecursiveSpawner.cs" />
+    <Compile Include="Assets\5-Networking\Scripts\Localuser.cs" />
+    <Compile Include="Assets\5-Networking\Scripts\Networkuser.cs" />
+    <Compile Include="Assets\5-Networking\Scripts\Player.cs" />
     <Compile Include="Assets\~Minesweeper3D\Scripts\Block.cs" />
     <Compile Include="Assets\~Minesweeper3D\Scripts\Grid.cs" />
     <Compile Include="Assets\~Minesweeper3D\minesweeperExamplehomework.cs" />
