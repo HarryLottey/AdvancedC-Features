@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/5-Networking/Offline.unity
-  isLoaded: 1
-  isActive: 1
